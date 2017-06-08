@@ -1,0 +1,42 @@
+body {
+    /*margin: 0;*/
+    padding: 0;
+}
+
+.FileManager {
+    width: 100%;
+    position: relative;
+    border: 1px solid black;
+    background: #595959; /* Old browsers */
+    background: linear-gradient(to top, #757575 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.ListView {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border: 1px solid black;    
+}
+
+.ListItem {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.Type {
+    position: relative;
+    left:10px;
+    top:45px;
+    height: 100%;
+}
+
+.Icon {
+    height: 100%;
+
+}
+
+.Data {
+}
