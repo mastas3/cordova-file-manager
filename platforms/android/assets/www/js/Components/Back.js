@@ -1,8 +1,13 @@
-var Back = function(pathStack) {
+var Back = function(pathStack, fileManager) {
   var back = document.createElement('div');
   back.className = 'Back';
 
   function goBack() {
+    if(pathStack.length==1) {
+      return;
+    }
+    pathStack.shift();
+    fileManager.setPath(pathStack[0])
     console.log(pathStack)
   }
 

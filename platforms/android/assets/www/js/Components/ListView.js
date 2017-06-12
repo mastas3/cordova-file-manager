@@ -12,6 +12,7 @@ var ListView = function() {
       }
       return listView;
     },
+
     init: function(folderContentPromise, fileManager) {
       console.log('ListView init');
 

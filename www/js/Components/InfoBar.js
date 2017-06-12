@@ -1,12 +1,24 @@
-var InfoBar = function(path, pathStack) {
+var InfoBar = function(path, pathStack, fileManager) {
   var infoBar = document.createElement('div');
   infoBar.className = 'InfoBar';
-  infoBar.innerText = path;
 
-  var back = Back(pathStack);
+  var topButtons = document.createElement('div');
+  topButtons.className = 'topButtons';
+  infoBar.appendChild(topButtons)
+
+  var back = Back(pathStack, fileManager);
   back.className = 'Back';
-  infoBar.appendChild(back);
+  topButtons.appendChild(back.dom());
 
+  var newF = New(fileManager);
+  topButtons.appendChild(newF.dom())
+
+  var pathText = document.createElement('div');
+  pathText.innerText = path;
+  pathText.className = 'PathText';
+  infoBar.appendChild(pathText);
+
+  //returned objcet from InfoBar()
   return {
     dom : function(child) {
       return infoBar;

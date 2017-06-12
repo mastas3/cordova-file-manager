@@ -20,11 +20,18 @@ var FileManager = function() {
 
   window.fileManager = fileManager; //for debugging
   
+
   return {
     init: function(path) {
       fileManager = document.createElement('div');
       fileManager.className = 'FileManager';
       fileManager.id = Date.now(); 
+
+      fileManager.onclick = function(_e) {
+        if(_e.target !== document.getElementsByClassName('Menu')[0]) {
+          document.getElementsByClassName('Menu')[0].style.display = 'none';
+        }
+      }
 
       this.createListView(path);
 
@@ -32,13 +39,15 @@ var FileManager = function() {
     },
 
     createListView: function(path) {
-      pathStack.push(path)
+      if(path !== pathStack[0]) {
+        pathStack.unshift(path)
+      }
 
       while(fileManager.hasChildNodes()) {
         fileManager.removeChild(fileManager.lastChild)
       }
 
-      infoBar = InfoBar(path, pathStack);
+      infoBar = InfoBar(path, pathStack, this);
       fileManager.appendChild(infoBar.dom())   
       
       listView = ListView();

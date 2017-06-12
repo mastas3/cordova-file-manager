@@ -1,20 +1,21 @@
 body {
-    /*margin: 0;*/
+    background: #424242;
     padding: 0;
 }
 
 .FileManager {
     width: 100%;
-    position: relative;
-    border: 1px solid black;
-    background: #595959; /* Old browsers */
-    background: linear-gradient(to top, #757575 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .ListView {
-    width: 100px;
-    height: 100px;
+    width: 100%;
     position: absolute;
+    background: linear-gradient(to top, #757575 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     border: 1px solid black;    
 }
 
@@ -24,13 +25,28 @@ body {
     color: white;
     padding: 10px;
     border-bottom: 1px solid gray;
+    justify-content: space-between;
+}
+
+.InfoBar {
+    background: #424242;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column; 
+}
+
+.Back {
+    background-image: url(../img/back.png);
+    background-repeat: no-repeat;
+    height: 75px;
+    width: 75px;
 }
 
 .Type {
     position: relative;
-    left:10px;
-    top:45px;
-    height: 100%;
+    left: -69px;
+    top: 11px;
 }
 
 .Icon {
@@ -38,5 +54,46 @@ body {
 
 }
 
-.Data {
+.PathText {
+    font-size: 11px;
+    background-color: whitesmoke;
+    color: black;
+    width: auto;
+    padding-left: 10px;
+}
+
+.numberOfFilesInsideFolder {
+    top: 20px;
+    font-size: 10px;
+    position: relative;
+}
+
+.newFile {
+    background-image: url(../img/new.png);
+    background-repeat: no-repeat;
+    width: 60px;
+    margin-left: auto;
+    position: relative;
+    top: 15px;   
+}
+
+.topButtons {
+    display: flex;
+}
+
+.Menu {
+    width: 100px;
+    height: 100px;
+    border: 1px solid whitesmoke;
+    position: absolute;
+    top: 23px;
+    right: 35px;
+    background-color: whitesmoke;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.MenuOptions {
+    border: 1px solid black;
 }
